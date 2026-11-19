@@ -1,15 +1,95 @@
-import React from 'react'
+import { useState } from 'react';
+import { Link } from 'react-router';
 
 const Login = () => {
-  return (
-    <div className='w-full h-screen flex items-center justify-center'>
-        <div className='w-150 h-120 bg-amber-200 border-b rounded-md '>
-            <h1 className='h-20 bg-red-200 p-5 pl-15 font-extrabold text-[24px] italic '>
-                Welcome back
-            </h1>
-        </div>
-    </div>
-  )
-}
 
-export default Login
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [error, setError] = useState("");
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    // stops the browser from reloading the page
+    // TODO: you'll add validation and the API call here
+    if (!email) {
+      setError("Please enter your email");
+      return;
+    }
+    if (!password) {
+      setError("Please enter your password");
+      return;
+    }
+    setError("");
+    console.log("form submitted");
+    console.log(`Email is ${email}`);
+  };
+
+  return (
+    <div className="w-full min-h-dvh  flex items-center justify-center p-4 pb-32">
+      <div className="w-full max-w-120 border border-gray-200 rounded-md shadow-xl bg-white">
+
+        <h1 className="p-5 pl-8 pt-8 font-extrabold text-[24px]">
+          Welcome back
+        </h1>
+
+        <form onSubmit={handleSubmit}>
+          <div className="w-full p-4 space-y-8">
+            <div className="flex flex-col gap-2">
+              <label htmlFor="email" className="font-bold">Email</label>
+              <input
+                type="email"
+                value={email}
+                id="email"
+                placeholder="Enter your email"
+                className="p-2 border rounded-md"
+                onChange={(e) => {
+                  setEmail(e.target.value);
+                }}
+              />
+            </div>
+
+            <div className="flex flex-col gap-2">
+              <label htmlFor="password" className="font-bold">Password</label>
+              <input
+                type="password"
+                value={password}
+                id="password"
+                placeholder="Enter your password"
+                className="p-2 border rounded-md"
+                onChange={(e) => {
+                  setPassword(e.target.value);
+                }}
+              />
+            </div>
+          </div>
+
+          <div className="flex flex-col gap-6 p-4">
+            <div className="text-right pr-4 text-blue-500 font-semibold">
+              <Link to="/forgotpassword">Forgot password?</Link>
+            </div>
+
+            {error && (
+              <p className="text-red-500 font-bold">{error}</p>
+            )}
+
+            <button
+              type="submit"
+              className="bg-blue-500 text-white h-10 w-full font-bold rounded-md">
+              Log in
+            </button>
+
+            <div className="text-center">
+              <p>
+                Don't have an account?{' '}
+                <Link to="/signup" className="text-blue-500 font-bold">Sign up</Link>
+              </p>
+            </div>
+          </div>
+        </form>
+
+      </div>
+    </div>
+  );
+};
+
+export default Login;
