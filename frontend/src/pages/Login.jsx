@@ -28,7 +28,7 @@ const Login = () => {
     <div className="w-full min-h-dvh  flex items-center justify-center p-4 pb-32">
       <div className="w-full max-w-120 border border-gray-200 rounded-md shadow-xl bg-white">
 
-        <h1 className="p-5 pl-8 pt-8 font-extrabold text-[24px]">
+        <h1 className="p-5 pl-6 pt-8 font-extrabold text-[24px]">
           Welcome back
         </h1>
 
