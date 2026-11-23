@@ -1,4 +1,5 @@
 import { NavLink, Link } from 'react-router'
+import Loginmenu from './Loginmenu'
 
 const linkClass = ({ isActive }) =>
   isActive ? 'font-semibold text-primary' : 'text-subtext hover:text-primary'
@@ -14,12 +15,7 @@ function Navbar() {
         <NavLink to="/" end className={linkClass}>Home</NavLink>
         <NavLink to="/my-bookings" className={linkClass}>My Bookings</NavLink>
         <NavLink to="/contact" className={linkClass}>Contact</NavLink>
-        <NavLink
-          to="/login"
-          className="rounded-lg bg-primary px-4 py-2 font-medium text-white hover:bg-blue-700"
-        >
-          Log in
-        </NavLink>
+        <Loginmenu/>
       </div>
     </nav>
   )
