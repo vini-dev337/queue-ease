@@ -8,7 +8,7 @@ const roles = [
   { label: "Doctor", value: "doctor" },
 ];
 
-export default function Loginmenu() {
+export default function LoginMenu() {
 
   const [isOpen, setIsOpen] = useState(false);
 

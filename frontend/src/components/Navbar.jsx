@@ -1,5 +1,5 @@
 import { NavLink, Link } from 'react-router'
-import Loginmenu from './Loginmenu'
+import LoginMenu from './LoginMenu'
 
 const linkClass = ({ isActive }) =>
   isActive ? 'font-semibold text-primary' : 'text-subtext hover:text-primary'
@@ -15,7 +15,7 @@ function Navbar() {
         <NavLink to="/" end className={linkClass}>Home</NavLink>
         <NavLink to="/my-bookings" className={linkClass}>My Bookings</NavLink>
         <NavLink to="/contact" className={linkClass}>Contact</NavLink>
-        <Loginmenu/>
+        <LoginMenu/>
       </div>
     </nav>
   )

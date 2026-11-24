@@ -1,5 +1,5 @@
 import React from 'react'
-import Searchcard from '../components/Searchcard'
+import SearchCard from '../components/SearchCard'
 import Chips from '../components/Chips'
 import Buttons from '../components/Buttons'
 
@@ -12,7 +12,7 @@ const Home = () => {
           <p className='text-slate-500'>Book tests, track your turn and get your reports, all in one place.</p>
         </div>
 
-        <Searchcard />
+        <SearchCard />
         <Buttons text="Find Slot"/>
         <div className='flex flex-wrap items-center justify-center gap-2'>
           <span className='text-slate-500'>Popular</span>

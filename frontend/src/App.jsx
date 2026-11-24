@@ -4,8 +4,8 @@ import Home from './pages/Home'
 import Contact from './pages/Contact'
 import MyBookings from './pages/MyBookings'
 import Login from './pages/Login'
-import Signup from './pages/Signup'
-import Forgotpassword from './pages/Forgotpassword'
+import SignUp from './pages/SignUp'
+import ForgotPassword from './pages/ForgotPassword'
 
 function App() {
   return (
@@ -17,8 +17,8 @@ function App() {
         <Route path="/my-bookings" element={<MyBookings />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/login" element={<Login />} />
-        <Route path='/signup' element={<Signup/>}/>
-        <Route path='/forgotpassword' element={<Forgotpassword/>}/>
+        <Route path='/signup' element={<SignUp/>}/>
+        <Route path='/forgotpassword' element={<ForgotPassword/>}/>
       </Routes>
     </main>
     </div >

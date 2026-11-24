@@ -1,8 +1,8 @@
-import { useState } from 'react';
-import { Link } from 'react-router';
+import { useState } from "react";
+import { Link } from "react-router";
+import FormInput from "../components/FormInput";
 
 const Login = () => {
-
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
@@ -10,7 +10,7 @@ const Login = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     // stops the browser from reloading the page
-    // TODO: you'll add validation and the API call here
+    // use validator
     if (!email) {
       setError("Please enter your email");
       return;
@@ -25,42 +25,31 @@ const Login = () => {
   };
 
   return (
-    <div className="w-full min-h-dvh  flex items-center justify-center p-4 pb-32">
+    <div className="w-full min-h-dvh flex items-center justify-center p-4 pb-32">
       <div className="w-full max-w-120 border border-gray-200 rounded-md shadow-xl bg-white">
-
         <h1 className="p-5 pl-6 pt-8 font-extrabold text-[24px]">
           Welcome back
         </h1>
 
         <form onSubmit={handleSubmit}>
           <div className="w-full p-4 space-y-8">
-            <div className="flex flex-col gap-2">
-              <label htmlFor="email" className="font-bold">Email</label>
-              <input
-                type="email"
-                value={email}
-                id="email"
-                placeholder="Enter your email"
-                className="p-2 border rounded-md"
-                onChange={(e) => {
-                  setEmail(e.target.value);
-                }}
-              />
-            </div>
+            <FormInput
+              label="Email"
+              id="email"
+              type="email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              placeholder="Enter your email"
+            />
 
-            <div className="flex flex-col gap-2">
-              <label htmlFor="password" className="font-bold">Password</label>
-              <input
-                type="password"
-                value={password}
-                id="password"
-                placeholder="Enter your password"
-                className="p-2 border rounded-md"
-                onChange={(e) => {
-                  setPassword(e.target.value);
-                }}
-              />
-            </div>
+            <FormInput
+              label="Password"
+              id="password"
+              type="password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              placeholder="Enter your password"
+            />
           </div>
 
           <div className="flex flex-col gap-6 p-4">
@@ -68,25 +57,25 @@ const Login = () => {
               <Link to="/forgotpassword">Forgot password?</Link>
             </div>
 
-            {error && (
-              <p className="text-red-500 font-bold">{error}</p>
-            )}
+            {error && <p className="text-red-500 font-bold">{error}</p>}
 
             <button
               type="submit"
-              className="bg-blue-500 text-white h-10 w-full font-bold rounded-md">
+              className="bg-blue-500 text-white h-10 w-full font-bold rounded-md"
+            >
               Log in
             </button>
 
             <div className="text-center">
               <p>
-                Don't have an account?{' '}
-                <Link to="/signup" className="text-blue-500 font-bold">Sign up</Link>
+                Don't have an account?{" "}
+                <Link to="/signup" className="text-blue-500 font-bold">
+                  Sign up
+                </Link>
               </p>
             </div>
           </div>
         </form>
-
       </div>
     </div>
   );
