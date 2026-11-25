@@ -73,14 +73,6 @@ const Signup = () => {
               placeholder="Create a password"
             />
 
-            <FormInput
-              label="Confirm password"
-              id="confirmPassword"
-              type="password"
-              value={confirmPassword}
-              onChange={(e) => setConfirmPassword(e.target.value)}
-              placeholder="Enter your password again"
-            />
           </div>
 
           <div className="flex flex-col gap-6 p-4">

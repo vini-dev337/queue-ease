@@ -44,13 +44,6 @@ const SearchCard = () => {
           />
         </div>
       </div>
-
-      <button
-        onClick={handleSearch}
-        className="mt-4 h-12 w-full rounded-lg bg-blue-500 font-bold text-white"
-      >
-        Search
-      </button>
     </>
   );
 };
